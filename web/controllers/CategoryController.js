@@ -10,7 +10,7 @@ class CategoryController{
     
     //ViewController
     getAllCategoryView()    {
-         var data=this.getAllCategory();
+        var data=this.getAllCategory();
         var result="<div class='btn-group-vertical'>";
         for(var i=0; i<data.length;i++)
         {

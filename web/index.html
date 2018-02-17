@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Home page</title>
+        <title>Отели Омска</title>
         <meta charset="windows-1251">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="lib/css/bootstrap.min.css" rel="stylesheet">
         <link href="lib/css/style.css" rel="stylesheet">
-         <script src="service/UserService.js"></script>
+        <link href="lib/css/styles.css" rel="stylesheet">
+        <script src="service/UserService.js"></script>
         <script src="service/CategoryService.js"></script>
         <script src="service/ContentService.js"></script>
-         <script src="controllers/UserController.js"></script>
+        <script src="controllers/UserController.js"></script>
         <script src="controllers/CategoryController.js"></script>
         <script src="controllers/ContentController.js"></script>
+        
         <script>
             function categoryClick(id)
             {
@@ -25,35 +27,39 @@
         </script>
     </head>
 
-  <body>
-    <div class="navbar navbar-inverse navbar-static-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">dsadas</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">dsadsa</a>
+    <body>
+        <div class="Top">
+            <a href="/Project/index.html"><div class="Menu">Главная</div></a>
+            <a href="/Project/view/signIn.html"><div class="Menu_comein">Войти</div></a>
+            <a href="/Project/view/signup.html"><div class="Menu_regist">Регистрация</div></a>
         </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">fsafsa</a></li>
-            <li><a href="/Project/view/projectInfo.html">AAA</a></li>
-          </ul>
+<!--        <div class="content">
+            <div id="content" class="col-lg-6 col-md-6 col-sm-6 col-xs-6"> 
+                <img class="hotel_photo" src="https://s-ec.bstatic.com/images/hotel/max1024x768/585/58532190.jpg">
+            </div>  
+            <div class="discription">
+                <div id=""></div>
+            </div>   
+        </div>  -->
+        <div class="menu_strip">
+            <div class="container">
+                <div class="row">
+                    <div  class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+                    <div id="category" class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div> 
+                    <div id="content" class="col-lg-6 col-md-6 col-sm-6 col-xs-6"></div>  
+                    <div  class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="row">
-          <div  class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-          <div id="category" class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div> 
-          <div id="content" class="col-lg-6 col-md-6 col-sm-6 col-xs-6"></div>  
-          <div  class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-      </div>
-    </div>
+            
+    
+    
+    
+    
+        <div class="footer"> 
+            <p1>Developed a website: Koshmuratov N.A. Ombytaev B.Z. Belonogov E.V.<br>
+                All rights reserved | OmGTU ASOIU 2017</p1> 
+        </div>
 
     <!--  ================================================== -->
     <script src="lib/js/jquery.min.js"></script>

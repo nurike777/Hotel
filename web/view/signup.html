@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Отель</title>
+        <meta charset="windows-1251">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../lib/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../lib/css/style.css" rel="stylesheet">
+        <link href="../lib/css/styles.css" rel="stylesheet">
+        <link href="../lib/css/stylereg.css" rel="stylesheet">
+        <script src="../service/UserService.js"></script>
+        <script src="../service/CategoryService.js"></script>
+        <script src="../service/ContentService.js"></script>
+        <script src="../controllers/UserController.js"></script>
+        <script src="../controllers/CategoryController.js"></script>
+        <script src="../controllers/ContentController.js"></script>
+    </head>
+    <body>
+        <div class="Top">
+            <a href="/Project/index.html"><div class="Menu">Главная</div></a>
+            <a href="/Project/view/signIn.html"><div class="Menu_comein">Войти</div></a>
+            <a href="/Project/view/signup.html"><div class="Menu_regist">Регистрация</div></a>
+        </div>
+        <div class="signup">
+			<form method = "POST" name="form" action ="post.php">
+			<h1>Регистрация</h1>
+		<div><input  type = "text" id = "login" name = "login" required placeholder = "Введите логин"></div><br>	
+		<div><input type = "password" id = "password" name = "password" required placeholder="Введите пароль"></div><br>
+		<div ><input type = "submit"  name = "submit" onclick="return validate_form();" ></div>
+			</form>	
+		</div>
+        <div class="footer"> 
+            <p1>Developed a website: Koshmuratov N.A. Ombytaev B.Z.<br>
+                All rights reserved | OmGTU ASOIU 2017</p1> 
+        </div>
+        
+        
+    </body>
+</html>

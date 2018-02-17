@@ -14,7 +14,7 @@ class CategoryService
          }
          return null;
     }
-    
+   
     getCategoryById(id)
     {
          var request = new XMLHttpRequest();
