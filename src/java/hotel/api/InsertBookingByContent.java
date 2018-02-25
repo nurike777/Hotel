@@ -12,16 +12,19 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import hotel.controllers.CategoryController;
-import hotel.mappers.JsonCategoryMapper;
-import hotel.model.Category;
+import hotel.controllers.BookingController;
+import hotel.mappers.JsonBookingMapper;
+import hotel.model.Booking;
+//import hotel.controllers.ContentController;
+//import hotel.mappers.JsonContentMapper;
+//import hotel.model.Content;
 
 /**
  *
  * @author nurzh
  */
-@WebServlet(name = "getCategoryById", urlPatterns = {"/getCategoryById"})
-public class GetCategoryById extends HttpServlet {
+@WebServlet(name = "InsertBookingByContent", urlPatterns = {"/InsertBookingByContent"})
+public class InsertBookingByContent extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,12 +38,12 @@ public class GetCategoryById extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        int id = Integer.parseInt(request.getParameter("id"));
+        String json = request.getParameter("json");
         try (PrintWriter out = response.getWriter()) {
-            CategoryController categoryController = new CategoryController();
-             Category category= categoryController.getCategory(id);
-             String json=JsonCategoryMapper.toJSON(category);
-             out.println(json);
+            Booking booking = JsonBookingMapper.fromJSON(json);
+            BookingController bookingController = new BookingController();
+            int count = bookingController.insertBooking(booking);
+            out.print(count);
         }
     }
 

@@ -13,45 +13,132 @@
         <script src="../controllers/UserController.js"></script>
         <script src="../controllers/CategoryController.js"></script>
         <script src="../controllers/ContentController.js"></script>
+        
+        <script>
+            function loginClick()
+            {
+                var button = "<button class='btn btn-default' id='logoutBut type='button' onclick='loginClick()'>Войти</button>";
+                var check = 0;
+                var userService = new UserService();
+                var array = userService.getAllUser();
+                var log = document.form1.login.value;
+                var pass = document.form1.password.value;
+                for (var i = 0; i < array.length; i++) {
+                    if ((array[i].login == log) && (array[i].password == pass)) {
+                        check = 1;
+                    }
+                }
+                if(check==1){
+                    alert("Вход выполнен");
+                    document.cookie = "login=" + log + ";path=/";
+                    document.cookie = "password=" + pass + ";path=/";
+                    document.getElementById('forma').style.display = 'none';
+                    var element = document.getElementById("logBut1");
+                    element.innerHTML = button;
+                    var n = document.getElementsByClassName('mur');
+                    for(var i=0;i<n.length;i++){
+                        n[i].disabled = false;
+                    }
+                }
+                else if((log=="") || (pass=="")) 
+                {
+                    alert("Введите логин и пароль");
+                }
+                else
+                {
+                    alert("Вход не выполнен. Проверьте введенные данные");
+                }
+            }
+            function logoutClick()
+            {
+                document.cookie.split(";").forEach(function(c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
+                location.reload(); 
+                
+            }
+        </script>    
+        
     </head>
     <body>
         <div class="Top">
             <a href="/Project/index.html"><div class="Menu">Главная</div></a>
             <a href="/Project/view/signIn.html"><div class="Menu_comein">Войти</div></a>
             <a href="/Project/view/signup.html"><div class="Menu_regist">Регистрация</div></a>
+            <a href="/Project/index.html"><div class="logout" onclick="logoutClick()">Выйти</div></a>               
         </div>
         
         
         
         <div class="signin">
-        <form class="form-horizontal" role="form">
+        <form class="form-horizontal" name="form1" id="forma" role="form">
             <div class="form-group">
-                <label for="inputEmail3" class="col-sm-2 control-label">Логин</label>
+                <label for="inputLogin3" id="inplog" class="col-sm-2 control-label">Логин</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputEmail3" placeholder="Логин">
+                    <input type="text" name="login" class="form-control" placeholder="Логин">
                 </div>
             </div>
             <div class="form-group">
                 <label for="inputPassword3" class="col-sm-2 control-label">Пароль</label>
                 <div class="col-sm-10">
-                    <input type="password" class="form-control" id="inputPassword3" placeholder="Пароль">
+                    <input type="password" name ="password" class="form-control" id="inputpass" placeholder="Пароль">
                 </div>
             </div>
-            <div class="form-group">
+<!--            <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                     <div class="checkbox">
                         <label>
-                          <input type="checkbox"> Запомнить меня
+                          <input type="checkbox" name="checkbox"> Запомнить меня
                         </label>
                     </div>
                 </div>
-            </div>
+            </div>-->
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-default">Войти</button>
+                    <button class="btn btn-default" type="button" onclick="loginClick()">Войти</button>
                 </div>
             </div>
+
         </form>
         </div>
+        
+        
+        <div class="footer"> 
+            <p1>Developed a website: Koshmuratov N.A. Ombytaev B.Z. Belonogov E.V.<br>
+                All rights reserved | OmGTU ASOIU 2017</p1> 
+        </div>
+        <!--  ================================================== -->
+        <script src="../lib/js/jquery.min.js"></script>
+        <script src="../lib/js/bootstrap.min.js"></script>
+        <script>
+            window.onload = function ()
+                {
+                var log = getCookie("login");
+                var pass = getCookie("password");
+                var button = "<button class='btn btn-default' type='button' onclick='logoutClick()'>Выйти</button>";
+                var check=0;            
+                var userService = new UserService(); 
+                var array = userService.getAllUser();
+                for (var i = 0; i < array.length; i++) {
+                    if ((array[i].login == log) && (array[i].password == pass)) {
+                       check = 1;
+                    }
+                }
+                if(check==1){
+                    document.getElementById('forma').style.display = 'none';
+                    var element = document.getElementById("logBut");
+                    element.innerHTML = button;
+                    var n = document.getElementsByClassName('mur');
+                    for(var i=0;i<n.length;i++){
+                       n[i].disabled = false;
+                    }
+                }
+                }
+                function getCookie(name) {
+                var matches = document.cookie.match(new RegExp(
+                  "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+                ));
+                return matches ? decodeURIComponent(matches[1]) : undefined;
+                 }
+        </script>
     </body>
+</html>
     

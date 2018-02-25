@@ -15,7 +15,6 @@ class ContentController{
             var id=data.id;
             var title=data.title;
             var shortDescription=data.shortDescription;
-            var fullDescription=data.fullDescription;
             var image=data.image;
             result +=  "<div class='row'>"+
                         "<div class='col-sm-12 col-md-12'>"+

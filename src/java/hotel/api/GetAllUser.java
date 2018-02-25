@@ -31,8 +31,8 @@ public class GetAllUser extends HttpServlet {
         {
             UserController userController = new UserController();
             List<User> list= userController.getAllUser();
-            String json=JsonUserMapper.toJSON(list);
-            out.println(list);
+            String json = JsonUserMapper.toJSON(list);
+            out.println(json);
         }
     }
 

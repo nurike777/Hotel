@@ -10,9 +10,31 @@
         <script src="../service/UserService.js"></script>
         <script src="../service/CategoryService.js"></script>
         <script src="../service/ContentService.js"></script>
+        <script src="../service/BookingService.js"></script>        
         <script src="../controllers/UserController.js"></script>
         <script src="../controllers/CategoryController.js"></script>
         <script src="../controllers/ContentController.js"></script>
+        <script src="../controllers/BookingController.js"></script>
+        
+        <script>
+            function bookingClick()
+            {
+                var controller = new BookingController();
+                var bookingService = new BookingService();
+                
+//                var userService = new UserService();
+//                var array = userService.getUserById();
+                
+                var controllerContent = new ContentController();
+                controllerContent.getContentById(id); 
+                
+                
+                
+                
+                
+            }
+        </script>
+        
     </head>
 
   <body>
@@ -30,7 +52,7 @@
                 <div  class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
             </div>
             <div class="booking">  
-                <button type="submit" class="btn btn-primary">Забронировать</button>
+                <button type="submit" class="btn btn-primary" onclick="bookingClick()">Забронировать</button>
             </div>
         </div>
     </div>    

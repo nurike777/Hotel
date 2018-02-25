@@ -21,6 +21,7 @@
     <mapper resource="hotel/mybatis/user.xml"/> 
     <mapper resource="hotel/mybatis/category.xml"/> 
     <mapper resource="hotel/mybatis/content.xml"/> 
+    <mapper resource="hotel/mybatis/booking.xml"/> 
   </mappers> 
   
 </configuration>
